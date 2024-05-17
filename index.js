@@ -3,6 +3,9 @@ const cors = require("cors")
 const rootRouter = require("./routes/index")
 
 const app =  express();
+app.use(cors({
+    origin:"https://litebyfrontend.vercel.app"
+}))
 
 app.use(cors());
 app.use(express.json());
