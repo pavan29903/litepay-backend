@@ -87,11 +87,14 @@ router.post("/signin" , async (req,res) => {
         username:req.body.username,
         password:req.body.password
     })
-
+    // const userId = dbUser._id;
+    // await Account.findOne({
+    //     userId
+    // })
 
     if(dbUser){
         const token = jwt.sign({
-            userId:user._id
+            userId:dbUser._id
         },JWT_SECRET)
 
         res.json({
